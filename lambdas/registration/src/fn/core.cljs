@@ -3,5 +3,7 @@
 
 (nodejs/enable-util-print!)
 
-(defn ^:export mong [& args]
-  (println (+ 2 2)))
+(defn ^:export handler [event context callback]
+  ;; callback is (Error, Object) => ()
+  (println "Hi from lambda!")
+  (callback nil "Lambda good return"))
